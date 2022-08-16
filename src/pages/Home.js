@@ -1,18 +1,23 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
-import EachProduct from '../components/EachProduct';
+import Category from '../components/filter/Category';
+import EachProduct from '../components/map/EachProduct';
 
-export default function Home({product}) {
-    console.log(product);
+export default function Home({product, handleCount,setCart,cart, setCategory,category}) {
+  
   return (
       <>
         <Helmet>
             <title>Home</title>
         </Helmet>
-     {product?.map(item=>(
+       <Category setCategory={setCategory} product={product} /> 
+       <div className='all-product'>
+
+     {category?.map(item=>(
        
-     <EachProduct key={item.id} item={item}/>
-))}
+       <EachProduct key={item.id} item={item} handleCount={handleCount} setCart={setCart} cart={cart}/>
+       ))}
+       </div>
     </>
   )
 }

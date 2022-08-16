@@ -1,0 +1,36 @@
+@import './Variables.scss';
+
+.single-item{
+    @include flex(column,space-between,center);
+    height: 620px;
+    border:1px solid grey;
+   
+    figure{
+        position: relative;
+        img{
+            height: 200px;
+        }
+        figcaption{
+            position: absolute;
+            background-color: $color;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%,50%);
+        }
+    }
+     .description{
+        margin: 0;
+        width: 300px;
+        
+     }
+     div{
+        @include flex(row,justify-content,center);
+        p{
+            margin-left: 10px;
+        }
+     }
+    .link{
+       text-decoration: none;
+    }
+
+}

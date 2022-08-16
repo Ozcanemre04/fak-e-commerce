@@ -6,9 +6,14 @@ import { Link } from 'react-router-dom';
 export default function NavBar({count}) {
   return (
     <header>
-      <h1>Fake-e-commerce</h1>
+      <h1>
+        <Link to={'/'} className='link'>
+        WebStore
+        </Link>
+        
+        </h1>
       <i>
-        <Link to={'/shopping-cart'}><FontAwesomeIcon icon={faShoppingCart} />{count}</Link>
+        <Link to={'/shopping-cart'} className='link'><FontAwesomeIcon icon={faShoppingCart} />{count}</Link>
         </i>
 
     </header>
