@@ -3,7 +3,7 @@
 
 
 header{
-    @include flex (row,center,center);
+    @include flex (row,space-between,center);
     background-color: $headerBg;
     padding: 15px;
     margin-bottom: 10px;

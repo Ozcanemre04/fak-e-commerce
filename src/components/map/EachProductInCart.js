@@ -4,9 +4,10 @@ export default function EachProductInCart({item,cart,setCart,count,setCount}) {
  
  
   
-    
+    console.log(item);
   
-
+ 
+  
 
     const handleDelete=(id)=>{
       
@@ -23,7 +24,7 @@ export default function EachProductInCart({item,cart,setCart,count,setCount}) {
     <div className='product-in-cart'>
       <img src={item?.image} alt="" />
       <p>{item?.title}</p>
-        
+    
       <div>
         <p>price:{item?.price}</p>
         <button onClick={()=>{handleDelete(item.id)}}>Delete</button>
