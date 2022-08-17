@@ -6,24 +6,21 @@
     border:1px solid grey;
    
     figure{
-        position: relative;
+      
         img{
             height: 200px;
         }
-        figcaption{
-            position: absolute;
-            background-color: $color;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%,50%);
-        }
+        
+    }
+    .rate{
+        @include flex(column,center,center)
     }
      .description{
         margin: 0;
         width: 300px;
         
      }
-     div{
+     .price-category{
         @include flex(row,justify-content,center);
         p{
             margin-left: 10px;
