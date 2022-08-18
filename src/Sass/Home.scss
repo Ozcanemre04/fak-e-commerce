@@ -13,7 +13,8 @@
 .category{
     @include flex(row,space-around,center);
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid grey;
+    
     
     button{
         
@@ -74,7 +75,9 @@
 
 @media (max-width:768px) {
     .category{
-        @include flex(column,center,center)
+        @include flex(column,center,center);
+        width:100%;
+        
     }
     .all-product{
         div{

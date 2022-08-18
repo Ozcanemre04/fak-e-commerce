@@ -42,11 +42,11 @@ export default function EachProductInCart({item,cart,setCart,count,setCount,tota
       <p>price:{item?.price}$</p>
 
       <p id={item.id}>quantity:{item.quantity}</p>
-      <button onClick={()=>{handleClick()}}>+</button>
+      <button className='cart-button' onClick={()=>{handleClick()}}>+</button>
 
       <div>
         <b>total:{item?.price * item.quantity}$</b>
-        <button onClick={()=>{handleDelete(item.id)}}>Delete</button>
+        <button className='cart-button' onClick={()=>{handleDelete(item.id)}}>Delete</button>
       </div>
    
     </div>

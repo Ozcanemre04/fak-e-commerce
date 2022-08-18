@@ -3,10 +3,16 @@
 
 .shopping-cart{
     @include flex(column,space-between,center);
+    .total-of-all-product{
+        background-color: $color;
+        padding: 5px;
+        border-radius: 5px;
+        color: white
+    }
     .product-in-cart{
         @include flex(row,space-between,center);
         
-        width: 900px;
+        // width: 900px;
         img{
            height: 100px;
            width: 100px;
@@ -14,17 +20,19 @@
        p{
         width: 150px;
        }
-       div{
-        @include flex(column,center,center);
-        width: 100px;
-        button{
-            background-color:$color;
+       .cart-button{
+        background-color:$color;
             width: 100px;
             border: none;
             padding: 10px;
             border-radius: 5px;
             color: white;
-        }
+
+       }
+       div{
+        @include flex(column,center,center);
+        width: 100px;
+         
        }
     }
 }

@@ -36,24 +36,21 @@ export default function SingleItem({product}) {
      <h2>{found?.title}</h2>
      <figure>
      <img src={found?.image} alt="" />
-    
+      <figcaption><b>category: </b><p>{found?.category}</p></figcaption>
      </figure>
-
-     
-     
       <p><b>count:</b>{found?.rating.count}</p>
+
       <div className='rate'>
         <h3>rate:</h3>
        <span>{getStars(number)}</span>
-
       </div>
      
      <b>description:</b>
      <p className='description'>{found?.description}</p>
-     <div className='price-category'>
+     
       <p><b>price:</b>{found?.price}</p>
-      <p><b>category:</b>{found?.category}</p>
-     </div>
+      
+     
 
      <p><Link to={'/'} className='link'>Home</Link></p>
     </div>

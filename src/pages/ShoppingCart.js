@@ -17,7 +17,7 @@ export default function ShoppingCart({cart,setCart,count,setCount}) {
         
       ))}
        
-      <p>total of all product:{total}</p>
+      <p className='total-of-all-product'>total of all product:{total? total : 0}</p>
     </div>
     </>
   )

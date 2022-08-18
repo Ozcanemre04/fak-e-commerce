@@ -1,14 +1,31 @@
 @import './Variables.scss';
 
 .single-item{
+    
     @include flex(column,space-between,center);
-    height: 620px;
+    min-height: 620px;
+    max-height: 700px;
+    max-width: 100%;
+    min-width: 75%;
+
     border:1px solid grey;
-   
+    h2{
+        text-align: center;
+    }
     figure{
-      
+      position: relative;
         img{
             height: 200px;
+        }
+        figcaption{
+            position: absolute;
+            bottom:0;
+            left: 50%;
+            background-color:$color;
+            width: 125px;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            text-align: center;
         }
         
     }
@@ -16,18 +33,18 @@
         @include flex(column,center,center)
     }
      .description{
-        margin: 0;
-        width: 300px;
+        margin-bottom: 10px;
+        max-width: 300px;
+        min-width: 100px;
+        text-align: center
         
      }
-     .price-category{
-        @include flex(row,justify-content,center);
-        p{
-            margin-left: 10px;
-        }
-     }
+    
     .link{
        text-decoration: none;
     }
 
 }
+
+
+  
