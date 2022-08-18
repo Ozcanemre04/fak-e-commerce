@@ -2,20 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function EachProduct({item, handleCount,setCart,cart}) {
-  
+ 
   const handleClick = (e)=>{
-    handleCount()
+    handleCount();
+    // eslint-disable-next-line
     if(item.id == e.target.parentElement.id){
       const cartCopy= [...cart]
-      cartCopy.push(item)
+      cartCopy.push({...item,'quantity':1})
       setCart(cartCopy)
     }
     
-    
   }
+  console.log(cart);
   const find = cart.find((x)=>x.id===item.id)
   
- 
+ console.log(item);
   
   return (
     <div id={item.id}>

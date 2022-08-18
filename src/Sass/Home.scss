@@ -34,6 +34,7 @@
     div{
        height:500px;
        width: 500px;
+       margin-top: 25px;
       
        @include flex(column,space-between,center);
        img{

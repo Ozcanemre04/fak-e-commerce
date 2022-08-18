@@ -14,8 +14,7 @@ const [product,setProduct] = useState([])
 const [count,setCount] = useState(0)
 const [cart,setCart] = useState([])
 const [category,setCategory] = useState([])
-
-
+  
   //useEffect
 useEffect(()=>{
    axios
@@ -25,12 +24,12 @@ useEffect(()=>{
     console.log(err);
    })
   },[])
+ 
+
   useEffect(()=>{
     setCategory(product)
     
   },[product])
-
-  
 
  
 //function
@@ -38,8 +37,6 @@ useEffect(()=>{
   setCount( count + 1)
   
  }
- 
-  
 
   return (
    <>
