@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet'
 import { Link, useParams } from 'react-router-dom';
 
 
-export default function SingleItem({product}) {
+export default function SingleItem({product,handleClick,foundItem}) {
   const params= useParams()
-  console.log(params);
+ 
 
   // eslint-disable-next-line
   const found = product.find(item=>{ return item.id == params.id})
@@ -27,9 +27,10 @@ export default function SingleItem({product}) {
   
     }
     
- 
+    
+
   return (
-    <div className='single-item'>
+    <div className='single-item' id={found?.id}>
     <Helmet>
       <title>product {params.id} details</title>
     </Helmet>
@@ -49,6 +50,7 @@ export default function SingleItem({product}) {
      <p className='description'>{found?.description}</p>
      
       <p><b>price:</b>{found?.price}</p>
+      <button onClick={(e)=>{handleClick(e,found)}} disabled={foundItem(found)} className='add-button'>add</button>
       
      
 

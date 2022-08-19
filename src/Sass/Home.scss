@@ -58,21 +58,22 @@
             color: grey;
         }
        }
-       button{
-        padding: 10px;
-        border: 1px solid $headerBg;
-        border-radius: 5px;
-        background-color: $color;
-        margin-bottom: 10px;
-        color: black;
-        &:hover{
-            color: white;
-            cursor: pointer;
-            
-        }
-       }
     }
 }
+
+.add-button{
+ padding: 10px;
+ border: 1px solid $headerBg;
+ border-radius: 5px;
+ background-color: $color;
+ margin-bottom: 10px;
+ color: black;
+ width: 100px;
+ &:hover{
+     color: white;
+     cursor: pointer;
+     
+ }}
 
 @media (max-width:768px) {
     .category{

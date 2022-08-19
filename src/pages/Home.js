@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Category from '../components/filter/Category';
 import EachProduct from '../components/map/EachProduct';
 
-export default function Home({product, handleCount,setCart,cart, setCategory,category}) {
+export default function Home({product,setCategory,category,handleClick,foundItem}) {
   
   return (
       <>
@@ -15,7 +15,7 @@ export default function Home({product, handleCount,setCart,cart, setCategory,cat
 
      {category?.map(item=>(
        
-       <EachProduct key={item.id} item={item} handleCount={handleCount} setCart={setCart} cart={cart}/>
+       <EachProduct key={item.id} item={item} handleClick={handleClick} foundItem={foundItem}/>
        ))}
        </div>
     </>

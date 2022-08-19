@@ -38,14 +38,31 @@ useEffect(()=>{
   
  }
 
+ const handleClick = (e,thing)=>{
+    handleCountClick()
+  // eslint-disable-next-line
+  if(thing.id == e.target.parentElement.id){
+    const cartCopy= [...cart]
+    cartCopy.push({...thing,'quantity':1})
+    setCart(cartCopy)
+  }
+  
+}
+const foundItem =(thing)=>{
+
+  const found= cart.find((x)=>x.id===thing.id)
+  return found
+  
+}
+
   return (
    <>
    <NavBar count={count} />
       <Routes>
         
-        <Route path='/' element={<Home product={product} handleCount={handleCountClick} setCart={setCart}  cart={cart} setCategory={setCategory} category={category}/>} />
+        <Route path='/' element={<Home product={product} setCategory={setCategory} category={category} handleClick={handleClick} foundItem={foundItem}/>} />
         <Route path='/shopping-cart' element={<ShoppingCart cart={cart}  setCart={setCart} count={count} setCount={setCount} />} />
-        <Route path='/product/:id' element={<SingleItem product={product} />} />
+        <Route path='/product/:id' element={<SingleItem product={product} handleClick={handleClick} foundItem={foundItem} />} />
       </Routes>
       
   </>

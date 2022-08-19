@@ -60,5 +60,12 @@
             margin-top: 20px;
             text-align: center;
         }
+        div{
+            @include flex(column,center,center);
+            width: 100px;
+             margin: 10px 10px 0 0;
+             transform: translateY(10px);
+           }
+        
     }
 }
