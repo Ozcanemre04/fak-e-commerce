@@ -21,7 +21,10 @@
         background-color: white;
         padding: 10px;
         width: 150px;
-        @include border(1px solid $headerBg,2px)
+        @include border(1px solid $headerBg,2px);
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 
