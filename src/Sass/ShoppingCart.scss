@@ -5,14 +5,14 @@
     @include flex(column,space-between,center);
     .total-of-all-product{
         background-color: $color;
-        padding: 5px;
+        padding: 10px;
         border-radius: 5px;
-        color: white
+        color: white;
+        margin-top: 10px;
     }
     .product-in-cart{
         @include flex(row,space-between,center);
-        
-        // width: 900px;
+        border-bottom: 1px solid grey;
         img{
            height: 100px;
            width: 100px;
@@ -47,10 +47,11 @@
 @media (max-width:768px) {
     .shopping-cart{
         @include flex(column,center,center);
-
+        
         .product-in-cart{
             @include flex(column,space-between,center);
             margin-top: 50px;
+            border: none;
             button{
                 margin-top: 10px;
             }
