@@ -20,8 +20,37 @@
 
         p {
             width: 150px;
+            text-align: center
         }
+        b{
+            width: 200px;
+            text-align: center;
+        }
+        div{
+            @include flex(row,center,center);
+            @extend .total-of-all-product;
+            width: 80px;
+            padding: 9px;
+            .increase{
+                width: 30px;
+                outline: none;
+                border: none;
+                background-color: transparent;
+                color: white;
+                text-align: center;
+                &:hover{
+                    color: black;
+                }
 
+            }
+            .decrease{
+                @extend .increase;
+            }
+            p{
+                width: 10px;
+                margin: 0;
+            }
+        }
         .cart-button {
             @extend .total-of-all-product;
             width: 100px;

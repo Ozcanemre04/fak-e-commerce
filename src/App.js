@@ -29,7 +29,6 @@ useEffect(()=>{
     setCategory(product)
   },[product])
 
- 
 //function
  const handleCountClick =()=>{
   setCount( count + 1)
