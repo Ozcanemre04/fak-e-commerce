@@ -24,6 +24,26 @@ useEffect(()=>{
     console.log(err);
    })
   },[])
+const quantity = cart.map(item=>item.quantity)
+
+  useEffect(()=>{
+    const storedcart = JSON.parse(localStorage.getItem('cart'))
+    if(storedcart) setCart(storedcart);
+    const storedcount = JSON.parse(localStorage.getItem('count'))
+    if(storedcount) setCount(storedcount)
+  },[])
+
+  useEffect(()=>{
+   localStorage.setItem('cart',JSON.stringify(cart))
+   
+   
+  },[cart,quantity])
+  useEffect(()=>{
+   localStorage.setItem('count',JSON.stringify(count))
+   console.log(count);
+   
+  },[count])
+
 
   useEffect(()=>{
     setCategory(product)
