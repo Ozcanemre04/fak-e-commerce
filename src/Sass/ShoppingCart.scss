@@ -1,72 +1,69 @@
 @import './Variables.scss';
 
+.shopping-cart {
+    @include flex(column, space-between, center);
 
-.shopping-cart{
-    @include flex(column,space-between,center);
-    .total-of-all-product{
+    .total-of-all-product {
         background-color: $color;
-        padding: 10px;
-        border-radius: 5px;
         color: white;
-        margin-top: 10px;
+        @include paddingMargin(10px,10px 0 0 0);
+        @include border(none,5px)
     }
-    .product-in-cart{
-        @include flex(row,space-between,center);
-        border-bottom: 1px solid grey;
-        img{
-           height: 100px;
-           width: 100px;
-       }
-       p{
-        width: 150px;
-       }
-       .cart-button{
-        background-color:$color;
-            width: 100px;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-       &:hover{
-        background-color: white;
-        color: $color;
-        border: 1px solid $color;
-        cursor: pointer;
-       }
 
-       }
-       div{
-        @include flex(column,center,center);
-        width: 100px;
-         margin-left: 10px;
-         transform: translateY(-10px);
-       }
+    .product-in-cart {
+        @include flex(row, space-between, center);
+        border-bottom: 1px solid grey;
+
+        img {
+            @include heightWidth(100px,100px);
+        }
+
+        p {
+            width: 150px;
+        }
+
+        .cart-button {
+            @extend .total-of-all-product;
+            width: 100px;
+            margin: 0 5px 0 5px;
+            
+
+            &:hover {
+                background-color: white;
+                color: $color;
+                border: 1px solid $color;
+                cursor: pointer;
+            }
+
+        }
+
+       
     }
 }
 
 @media (max-width:768px) {
-    .shopping-cart{
-        @include flex(column,center,center);
-        
-        .product-in-cart{
-            @include flex(column,space-between,center);
+    .shopping-cart {
+        @include flex(column, center, center);
+
+        .product-in-cart {
+            @include flex(column, space-between, center);
             margin-top: 50px;
             border: none;
-            button{
-                margin-top: 10px;
+
+           
+            .cart-button{
+                margin: 10px 0 10px 0;
             }
-            
+            p {
+                margin-top: 10px;
+                text-align: center;
+            }
+            b{
+                margin-top: 10px;
+                
+            }
+
         }
-        p{
-            margin-top: 20px;
-            text-align: center;
-        }
-        div{
-            @include flex(column,center,center);
-            width: 100px;
-             margin: 10px 10px 0 0;
-             transform: translateY(10px);
-           }
-        
+
     }
 }

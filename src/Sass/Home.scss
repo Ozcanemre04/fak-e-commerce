@@ -4,90 +4,93 @@
 @import './Variables.scss';
 
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-
-.category{
-    @include flex(row,space-around,center);
+.category {
+    @include flex(row, space-around, center);
 
     border-bottom: 1px solid grey;
-    
-    
-    button{
-        
+
+
+    button {
+
         outline: none;
         background-color: white;
         padding: 10px;
         width: 150px;
-        border-radius: 2px;
-        border: 1px solid $headerBg;
+        @include border(1px solid $headerBg,2px)
     }
 }
 
-.all-product{
-    @include flex(row,space-around,center);
+.all-product {
+    @include flex(row, space-around, center);
     flex-wrap: wrap;
     margin-top: 50px;
 
-    div{
-       height:500px;
-       width: 500px;
-       margin-top: 25px;
-      
-       @include flex(column,space-between,center);
-       img{
-          height: 200px;
-          width: 200px;
-          
-       }
-       .link{
-           text-decoration: none;
-           color: $color;
-           &:hover{
-            color: grey;
-           }
-           &:active{
-            color: black;
-           }
-       }
-       .product-category{
-        i{
-            color: grey;
+    div {
+        @include heightWidth(500px,500px);
+        margin-top: 25px;
+
+        @include flex(column, space-between, center);
+
+        img {
+            @include heightWidth(200px,200px);
+
+
         }
-       }
+
+        .link {
+            text-decoration: none;
+            color: $color;
+
+            &:hover {
+                color: grey;
+            }
+
+            &:active {
+                color: black;
+            }
+        }
+
+        .product-category {
+            i {
+                color: grey;
+            }
+        }
     }
 }
 
-.add-button{
- padding: 10px;
- border: 1px solid $headerBg;
- border-radius: 5px;
- background-color: $color;
- margin-bottom: 10px;
- color: black;
- width: 100px;
- &:hover{
-     color: white;
-     cursor: pointer;
-     
- }}
+.add-button {
+    @include border(1px solid $headerBg,5px);
+    background-color: $color;
+    @include paddingMargin(10px,0 0 10px 0);
+    color: black;
+    width: 100px;
+
+    &:hover {
+        color: white;
+        cursor: pointer;
+
+    }
+}
 
 @media (max-width:768px) {
-    .category{
-        @include flex(column,center,center);
-        width:100%;
-        
+    .category {
+        @include flex(column, center, center);
+        width: 100%;
+
     }
-    .all-product{
-        div{
-            img{
-                width: 100px;
-                height: 100px;
+
+    .all-product {
+        div {
+            img {
+                @include heightWidth(100px,100px);
             }
-            h3{
+
+            h3 {
                 width: 100px;
                 text-align: center;
             }

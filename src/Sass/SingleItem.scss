@@ -1,59 +1,57 @@
 @import './Variables.scss';
 
+.single-item {
 
-
-
-
-
-.single-item{
-    
-    @include flex(column,space-between,center);
+    @include flex(column, space-between, center);
     min-height: 620px;
     max-height: 700px;
     max-width: 100%;
     min-width: 75%;
 
-    border:1px solid grey;
-    h2{
+    border: 1px solid grey;
+
+    h2 {
         text-align: center;
     }
-    figure{
-      position: relative;
-        img{
+
+    figure {
+        position: relative;
+
+        img {
             height: 200px;
         }
-        figcaption{
+
+        figcaption {
             position: absolute;
-            bottom:0;
+            bottom: 0;
             left: 50%;
-            background-color:$color;
+            background-color: $color;
             width: 125px;
             transform: translateX(-50%);
             border-radius: 5px;
             text-align: center;
         }
-        
+
     }
-    .rate{
-        @include flex(column,center,center)
+
+    .rate {
+        @include flex(column, center, center)
     }
-     .description{
+
+    .description {
         margin-bottom: 10px;
         max-width: 300px;
         min-width: 100px;
         text-align: center
-        
-     }
-    
-    .link{
-       text-decoration: none;
-       color: black;
-       &:hover{
-        color: $color;
-       }
+    }
+
+    .link {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: $color;
+        }
     }
 
 }
-
-
-  

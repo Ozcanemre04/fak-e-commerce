@@ -8,3 +8,19 @@ $color:rgb(44, 127, 130);
     justify-content:$content ;
     align-items:$align ;
 }
+
+
+@mixin border($border,$radius){
+    border: $border;
+    border-radius: $radius;
+}
+
+@mixin paddingMargin($padding,$margin) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin heightWidth($height,$width) {
+    height: $height;
+    width: $width;
+}
