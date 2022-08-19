@@ -10,14 +10,12 @@ export default function Home({product,setCategory,category,handleClick,foundItem
         <Helmet>
             <title>Home</title>
         </Helmet>
-       <Category setCategory={setCategory} product={product} /> 
-       <div className='all-product'>
-
-     {category?.map(item=>(
-       
-       <EachProduct key={item.id} item={item} handleClick={handleClick} foundItem={foundItem}/>
-       ))}
-       </div>
+        <Category setCategory={setCategory} product={product} /> 
+        <div className='all-product'>
+          {category?.map(item=>(
+                 <EachProduct key={item.id} item={item} handleClick={handleClick} foundItem={foundItem}/>
+          ))}
+        </div>
     </>
   )
 }

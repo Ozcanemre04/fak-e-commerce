@@ -24,18 +24,15 @@ useEffect(()=>{
     console.log(err);
    })
   },[])
- 
 
   useEffect(()=>{
     setCategory(product)
-    
   },[product])
 
  
 //function
  const handleCountClick =()=>{
   setCount( count + 1)
-  
  }
 
  const handleClick = (e,thing)=>{
@@ -46,13 +43,10 @@ useEffect(()=>{
     cartCopy.push({...thing,'quantity':1})
     setCart(cartCopy)
   }
-  
 }
 const foundItem =(thing)=>{
-
   const found= cart.find((x)=>x.id===thing.id)
-  return found
-  
+  return found 
 }
 
   return (

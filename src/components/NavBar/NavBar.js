@@ -10,12 +10,10 @@ export default function NavBar({count}) {
         <Link to={'/'} className='link'>
         WebStore
         </Link>
-        
         </h1>
       <i>
         <Link to={'/shopping-cart'} className='link'><FontAwesomeIcon icon={faShoppingCart} />{count}</Link>
-        </i>
-
+      </i>
     </header>
   )
 }

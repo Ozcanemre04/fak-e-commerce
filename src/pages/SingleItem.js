@@ -19,12 +19,10 @@ export default function SingleItem({product,handleClick,foundItem}) {
         if (rating - 1 < i) {
           stars.push(<span>☆</span>);
         } else {
-          stars.push(<span>★</span>);
-          
+          stars.push(<span>★</span>); 
         }
       }
       return stars;
-  
     }
     
     
@@ -40,21 +38,15 @@ export default function SingleItem({product,handleClick,foundItem}) {
       <figcaption><b>category: </b><p>{found?.category}</p></figcaption>
      </figure>
       <p><b>count:</b>{found?.rating.count}</p>
-
       <div className='rate'>
         <h3>rate:</h3>
        <span>{getStars(number)}</span>
       </div>
-     
      <b>description:</b>
      <p className='description'>{found?.description}</p>
-     
       <p><b>price:</b>{found?.price}</p>
       <button onClick={(e)=>{handleClick(e,found)}} disabled={foundItem(found)} className='add-button'>add</button>
-      
-     
-
-     <p><Link to={'/'} className='link'>Home</Link></p>
+      <p><Link to={'/'} className='link'>Home</Link></p>
     </div>
   )
 }
