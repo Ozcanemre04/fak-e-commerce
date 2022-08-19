@@ -15,6 +15,8 @@ const [count,setCount] = useState(0)
 const [cart,setCart] = useState([])
 const [category,setCategory] = useState([])
   
+const quantity = cart.map(item=>item.quantity)
+
   //useEffect
 useEffect(()=>{
    axios
@@ -24,7 +26,6 @@ useEffect(()=>{
     console.log(err);
    })
   },[])
-const quantity = cart.map(item=>item.quantity)
 
   useEffect(()=>{
     const storedcart = JSON.parse(localStorage.getItem('cart'))
@@ -40,8 +41,6 @@ const quantity = cart.map(item=>item.quantity)
   },[cart,quantity])
   useEffect(()=>{
    localStorage.setItem('count',JSON.stringify(count))
-   console.log(count);
-   
   },[count])
 
 
