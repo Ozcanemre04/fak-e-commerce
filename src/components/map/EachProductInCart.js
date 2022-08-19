@@ -11,7 +11,6 @@ export default function EachProductInCart({item,cart,setCart,count,setCount,setT
         const filter=copyCart.filter(del=>del.id !== id)
         setCart(filter)
         setCount(count - item.quantity)
-      
     }
     
     const x= item?.rating.count
