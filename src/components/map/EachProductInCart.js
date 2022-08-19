@@ -3,7 +3,7 @@ import React, { useEffect} from 'react'
 export default function EachProductInCart({item,cart,setCart,count,setCount,setTotal}) {
  
  useEffect(()=>{
-  setTotal(cart.reduce((total, item)=>total+(item.price*item.quantity),0))
+  setTotal(cart.reduce((total, item)=>total+(item.price*item.quantity),0).toFixed(2))
  },[cart,count,setTotal])
 
     const handleDelete=(id)=>{
@@ -38,7 +38,7 @@ export default function EachProductInCart({item,cart,setCart,count,setCount,setT
       <p id={item.id}>{item.quantity}</p>
       <button className='increase' onClick={()=>{handleIncrease()}}>+</button>
       </div>
-      <b>total:{item?.price * item.quantity}$</b>
+      <b>total:{(item?.price * item.quantity).toFixed(2)}$</b>
       <button className='cart-button' onClick={()=>{handleDelete(item.id)}}>Delete</button>
     </div>
   )
