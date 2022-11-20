@@ -1,11 +1,13 @@
 import React from 'react'
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet'
 import { Link, useParams } from 'react-router-dom';
+import { ctx } from '../App';
 
 
-export default function SingleItem({product,handleClick,foundItem}) {
+export default function SingleItem() {
   const params= useParams()
- 
+ const {product,handleClick,foundItem} = useContext(ctx)
 
   // eslint-disable-next-line
   const found = product.find(item=>{ return item.id == params.id})

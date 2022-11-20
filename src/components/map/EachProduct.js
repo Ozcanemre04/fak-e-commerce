@@ -1,8 +1,10 @@
 import React from 'react'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-export default function EachProduct({item,foundItem,handleClick}) {
-  
+import { ctx } from '../../App';
+export default function EachProduct({item}) {
+ const {foundItem,handleClick}= useContext(ctx)
+ 
   return (
     <div id={item.id}>
     <img src={item.image} alt="" />

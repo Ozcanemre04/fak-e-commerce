@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState,createContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home'
@@ -8,7 +8,9 @@ import SingleItem from './pages/SingleItem';
 import axios from "axios";
 import './Sass/Home.scss'
 
+export const ctx = createContext()
 function App() {
+  
   //state
 const [product,setProduct] = useState([])
 const [count,setCount] = useState(0)
@@ -36,9 +38,9 @@ useEffect(()=>{
 
   useEffect(()=>{
    localStorage.setItem('cart',JSON.stringify(cart))
-   
-   
   },[cart,quantity])
+
+
   useEffect(()=>{
    localStorage.setItem('count',JSON.stringify(count))
   },[count])
@@ -66,17 +68,17 @@ const foundItem =(thing)=>{
   const found= cart.find((x)=>x.id===thing.id)
   return found 
 }
-
   return (
-   <>
+    <>
+        <ctx.Provider value={{product,handleClick,foundItem}}>
    <NavBar count={count} />
       <Routes>
-        
-        <Route path='/' element={<Home product={product} setCategory={setCategory} category={category} handleClick={handleClick} foundItem={foundItem}/>} />
         <Route path='/shopping-cart' element={<ShoppingCart cart={cart}  setCart={setCart} count={count} setCount={setCount} />} />
-        <Route path='/product/:id' element={<SingleItem product={product} handleClick={handleClick} foundItem={foundItem} />} />
+        <Route path='/' element={<Home  setCategory={setCategory} category={category} />} />
+        <Route path='/product/:id' element={<SingleItem  />} />
       </Routes>
       
+        </ctx.Provider>
   </>
     
   );

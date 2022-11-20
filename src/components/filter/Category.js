@@ -1,6 +1,11 @@
 import React from 'react'
+import { useContext } from 'react'
+import { ctx } from '../../App'
 
-export default function Category({product,setCategory}) {
+export default function Category({setCategory}) {
+const {product} = useContext(ctx)
+
+
  const handleCategory=(category)=>{
    const filter = product.filter(item=>item.category ===category)
    setCategory(filter)
